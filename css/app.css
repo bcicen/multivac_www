@@ -1,0 +1,31 @@
+html {
+  background-color: #fefefe;
+}
+
+body {
+  background-color: #fefefe;
+}
+
+@font-face {
+  font-family: "Cocomat";
+    src: url(../ttf/cocomat-light.ttf) format("truetype");
+}
+
+div.sidebar-about h1 {
+    font-family: "Cocomat", Verdana, Tahoma;
+    font-size: 1.8em;
+    letter-spacing: .45em;
+    text-rendering: optimizeLegibility;
+}
+
+div.sidebar {
+    background-color: #06293A;
+}
+
+a {
+    color: #7e7e7e;
+}
+pre, xmp, plaintext, listing {
+  display: block;
+  margin: 5px;
+}

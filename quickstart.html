@@ -1,0 +1,113 @@
+<html>i
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Multivac</title>
+  
+  <link rel="stylesheet" href="css/poole.css">
+  <link rel="stylesheet" href="css/hyde.css">
+  <link rel="stylesheet" href="css/solarized_dark.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+  
+  <script>
+  $(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+	  });
+  });
+  </script>
+</head>
+
+<body>
+<div class="sidebar">
+  <img id="logo" class="center" src="logo.png">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="cocomat">MULTIVAC</h1>
+      <p class="lead">
+      ChatOps Framework 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Home</a> </li>
+      <li><a href="docs.html">Docs</a> </li>
+      <li><a href="quickstart.html">Quickstart</a> </li>
+      <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
+    </ul>
+
+    <p>© 2015. All rights reserved. </p>
+  </div>
+</div>
+<div class="content container">
+<div class="post">
+
+<h1 id="toc_0">Quickstart</h1>
+
+<h2 id="toc_1">Installing</h2>
+<pre><code class="bash">git clone https://github.com/bcicen/multivac.git
+cd multivac
+pip3 install -r requirements.txt
+python3 setup.py install
+</code></pre>
+
+<h2 id="toc_1">Configuration</h2>
+<p>All Multivac components are configured via a common YAML configuration file.</p>
+<p>Example:</p>
+<pre><code class="yaml">#global config
+redis: "127.0.0.1:6379"
+actions:
+  - name: echo
+    cmd: /bin/echo
+    confirm_required: True
+
+#slackbot config
+slack_token: 1234
+
+#api config
+api_listen_port: 8000
+</code></pre>
+
+<ul>
+	<li>redis: "host:port" of the common redis instance</li> 
+	<li>actions: A list of configured actions to be used in the creation of jobs</li> 
+  <ul>
+  	<li>name: This serves as the command name to create the job via Slack message or API</li> 
+  	<li>cmd: Path of the command or script to execute</li> 
+  	<li>confirm_required: If True, a secondary confirmation will be required before the command is run</li> 
+	</ul>
+	<li>slack_token: Slack token used to connect to the Slack RTM API</li> 
+	<li>api_listen_port: Port for which the API and web interface will listen</li> 
+</ul>
+
+<h2 id="toc_1">Running</h2>
+<p>To bring up a full stack, start the worker, api, and slackbot processes using the Multivac command line utility:</p>
+<pre><code class="bash">multivac -c config.yml worker
+multivac -c config.yml api
+multivac -c config.yml slackbot</code></pre>
+
+<p> Usage: </p>
+<pre><code class="bash">usage: multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api}
+
+multivac v0.7
+
+positional arguments:
+  {worker,slackbot,api}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG_PATH        path to config file (default: /etc/multivac.yml)
+  -d                    enable debug output
+</code></pre>
+
+</div>
+</div>
+
+</body></html>

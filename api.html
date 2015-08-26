@@ -1,0 +1,261 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><script type="text/javascript">(function (){
+		for (var i in window)
+		{
+			try {
+				var jsType = typeof window[i];
+				switch (jsType.toUpperCase())
+				{					
+					case "FUNCTION": 
+						if (window[i] !== window.location)
+						{
+							if (window[i] === window.open || (window.showModelessDialog && window[i] === window.showModelessDialog))
+								window[i] = function(){return true;};
+							else if (window[i] === window.onbeforeunload)	// To try to fix onbeforeunload pop ups some users report seeing but I can't replicate.
+								window.onbeforeunload = null;
+							else if (window[i] === window.onunload)
+								window.onunload = null;								
+							else
+								window[i] = function(){return "";};
+						}
+						break;							
+				}			
+			}
+			catch(err)
+			{}		
+		}
+		
+		for (var i in document)
+		{
+			try {
+				var jsType = typeof document[i];
+				switch (jsType.toUpperCase())
+				{					
+					case "FUNCTION":
+						document[i] = function(){return "";};
+						break;					
+				}			
+			}
+			catch(err)
+			{}		
+		}
+
+		try {
+			eval = function(){return "";};				
+			unescape = function(){return "";};
+			String = function(){return "";};
+			parseInt = function(){return "";};
+			parseFloat = function(){return "";};
+			Number = function(){return "";};
+			isNaN = function(){return "";};
+			isFinite = function(){return "";};
+			escape = function(){return "";};
+			encodeURIComponent = function(){return "";};
+			encodeURI = function(){return "";};
+			decodeURIComponent = function(){return "";};
+			decodeURI = function(){return "";};
+			Array = function(){return "";};
+			Boolean = function(){return "";};
+			Date = function(){return "";};
+			Math = function(){return "";};
+			Number = function(){return "";};
+			RegExp = function(){return "";};
+			
+			var oNav = navigator;
+			navigator = function(){return "";};
+			oNav = null;			
+		}
+		catch(err)
+		{}
+		
+	})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>Multivac</title>
+  
+  <link rel="stylesheet" href="css/poole.css">
+  <link rel="stylesheet" href="css/hyde.css">
+  <link rel="stylesheet" href="css/solarized_dark.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+  
+  <link rel="shortcut icon" href="favicon.ico">
+  
+  <script type="text/javascript" src="highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+</head>
+
+<body>
+<div class="sidebar">
+  <img id="logo" class="center" src="logo.png">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="cocomat">MULTIVAC</h1>
+      <p class="lead">
+      ChatOps Framework 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Home</a> </li>
+      <li><a href="docs.html">Docs</a> </li>
+      <li><a href="quickstart.html">Quickstart</a> </li>
+      <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
+    </ul>
+
+    <p>© 2015. All rights reserved. </p>
+  </div>
+</div>
+<div class="content container">
+<div class="post">
+
+<h1 id="toc_0">API Documentation</h1>
+
+<p>This describes the components and design of Multivac.  You can use the <a href="/docs/quickstart">Quickstart</a> to deploy Multivac.</p>
+
+<h1 id="toc_1">Endpoints</h1>
+
+<h2 id="toc_8">/jobs</h2>
+<ul>
+	<li><a href="#get-jobs">Get All Jobs</a></li>
+	<li><a href="#get-job">Get Job By ID</a></li>
+	<li><a href="#create-job">Create Job</a></li>
+</ul>
+
+<h2 id="toc_8">/actions</h2>
+<ul>
+	<li><a href="#get-actions">Get Actions</a></li>
+</ul>
+
+<h2 id="toc_8">/logs</h2>
+<ul>
+	<li><a href="#get-logs">Get Logs</a></li>
+</ul>
+
+<h2 id="toc_8">/workers</h2>
+<ul>
+	<li><a href="#get-workers">Get Workers</a></li>
+</ul>
+
+<h2 id="toc_8">/version</h2>
+<ul>
+	<li><a href="#get-version">Get Version</a></li>
+</ul>
+
+<p><a name="get-jobs"></a></p>
+<h2 id="toc_12">GET /jobs</h2>
+<p>Returns a list of all jobs</p>
+
+<pre><code class="json">
+Content-Type application/json
+[
+  {
+    "args": "hello",
+    "cmd": "/bin/echo",
+    "confirm_required": "False",
+    "created": "1440541057",
+    "id": "1587bd4f70234c73852de387838b9434",
+    "name": "echo",
+    "status": "completed"
+  }
+]
+</code></pre>
+
+<p><a name="get-job"></a></p>
+<h2 id="toc_12">GET /jobs/&lt;job_id&gt</h2>
+<p>Returns a single job matching provided ID</p>
+
+<pre><code class="json">
+Content-Type application/json
+  {
+    "args": "hello",
+    "cmd": "/bin/echo",
+    "confirm_required": "False",
+    "created": "1440541057",
+    "id": "1587bd4f70234c73852de387838b9434",
+    "name": "echo",
+    "status": "completed"
+  }
+</code></pre>
+
+<p><a name="create-job"></a></p>
+<h2 id="toc_12">POST /jobs</h2>
+<p>Create a new job and append it to the worker queue</p>
+
+<p>Request</p>
+<pre><code class="json">
+Content-Type application/json
+  {
+    "action": "echo",
+    "action_args": "hello"
+  }
+</code></pre>
+<p>Response</p>
+<pre><code class="json">
+Content-Type application/json
+{
+    "id": "edba7a34a4b84d64b7ef69f47cf44748"
+}
+</code></pre>
+
+<p><a name="get-actions"></a></p>
+<h2 id="toc_12">GET /actions</h2>
+<p>Returns a list of all configured actions</p>
+
+<pre><code class="json">
+Content-Type application/json
+[
+  {
+    "cmd": "/bin/echo",
+    "confirm_required": "False",
+    "name": "echo"
+  }
+]
+</code></pre>
+
+<p><a name="get-logs"></a></p>
+<h2 id="toc_12">GET /logs/&lt;job_id&gt</h2>
+<p>Returns output log for provided job ID.<br>Optionally append ?json=true parameter to return logs in a JSON-formatted array</p>
+
+<pre><code class="json">
+[Tue Aug 25 22:17:37 2015] hello
+</code></pre>
+or
+<pre><code class="json">
+Content-Type application/json
+[
+    "[Tue Aug 25 22:17:37 2015] hello"
+]
+</code></pre>
+
+<p><a name="get-workers"></a></p>
+<h2 id="toc_12">GET /workers</h2>
+<p>Return a list of registered job workers</p>
+
+<pre><code class="json">
+Content-Type application/json
+[
+    {
+        "host": "localhost",
+        "name": "Jacqueline"
+    }
+]
+</code></pre>
+
+<p><a name="get-version"></a></p>
+<h2 id="toc_12">GET /version</h2>
+<p>Return Multivac version</p>
+
+<pre><code class="json">
+Content-Type application/json
+{
+    "version": "v0.7"
+}
+</code></pre>
+
+</div>
+</div>
+</body></html>
