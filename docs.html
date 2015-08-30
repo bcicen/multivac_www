@@ -54,6 +54,7 @@
 
 <ul>
 	<li><a href="#config">Config</a></li>
+	<li><a href="#running">Config</a></li>
 	<li><a href="#webui">WebUI</a></li>
 	<li><a href="#api">API</a></li>
 	<li><a href="#chatbot">ChatBot</a></li>
@@ -89,6 +90,23 @@ api_listen_port: 8000
 	<li>slack_token: Slack token used to connect to the Slack RTM API</li> 
 	<li>api_listen_port: Port for which the API and web interface will listen</li> 
 </ul>
+
+<a name="running"></a>
+<h2 id="toc_1">Running</h2>
+<p>After installing Multivac, components can be launched with the cli utility:</p>
+<h4 id="toc_1">Usage</h4>
+<pre><code class="bash">multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api,console}
+
+multivac v0.7
+
+positional arguments:
+  {worker,slackbot,api,console}
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -c CONFIG_PATH        path to config file (default: /etc/multivac.yml)
+  -d                    enable debug output
+</code></pre>
 
 <a name="webui"></a>
 <h2 id="toc_1">WebUI</h2>
