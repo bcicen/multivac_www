@@ -1,73 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><script type="text/javascript">(function (){
-		for (var i in window)
-		{
-			try {
-				var jsType = typeof window[i];
-				switch (jsType.toUpperCase())
-				{					
-					case "FUNCTION": 
-						if (window[i] !== window.location)
-						{
-							if (window[i] === window.open || (window.showModelessDialog && window[i] === window.showModelessDialog))
-								window[i] = function(){return true;};
-							else if (window[i] === window.onbeforeunload)	// To try to fix onbeforeunload pop ups some users report seeing but I can't replicate.
-								window.onbeforeunload = null;
-							else if (window[i] === window.onunload)
-								window.onunload = null;								
-							else
-								window[i] = function(){return "";};
-						}
-						break;							
-				}			
-			}
-			catch(err)
-			{}		
-		}
-		
-		for (var i in document)
-		{
-			try {
-				var jsType = typeof document[i];
-				switch (jsType.toUpperCase())
-				{					
-					case "FUNCTION":
-						document[i] = function(){return "";};
-						break;					
-				}			
-			}
-			catch(err)
-			{}		
-		}
-
-		try {
-			eval = function(){return "";};				
-			unescape = function(){return "";};
-			String = function(){return "";};
-			parseInt = function(){return "";};
-			parseFloat = function(){return "";};
-			Number = function(){return "";};
-			isNaN = function(){return "";};
-			isFinite = function(){return "";};
-			escape = function(){return "";};
-			encodeURIComponent = function(){return "";};
-			encodeURI = function(){return "";};
-			decodeURIComponent = function(){return "";};
-			decodeURI = function(){return "";};
-			Array = function(){return "";};
-			Boolean = function(){return "";};
-			Date = function(){return "";};
-			Math = function(){return "";};
-			Number = function(){return "";};
-			RegExp = function(){return "";};
-			
-			var oNav = navigator;
-			navigator = function(){return "";};
-			oNav = null;			
-		}
-		catch(err)
-		{}
-		
-	})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -78,14 +10,19 @@
   <link rel="stylesheet" href="css/hyde.css">
   <link rel="stylesheet" href="css/solarized_dark.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/app.css">
   <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
   
-  <link rel="shortcut icon" href="favicon.ico">
-  
-  <script type="text/javascript" src="highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+  $(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+	  });
+  });
+  </script>
 </head>
 
 <body>

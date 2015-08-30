@@ -1,73 +1,5 @@
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us"><script type="text/javascript">(function (){
-		for (var i in window)
-		{
-			try {
-				var jsType = typeof window[i];
-				switch (jsType.toUpperCase())
-				{					
-					case "FUNCTION": 
-						if (window[i] !== window.location)
-						{
-							if (window[i] === window.open || (window.showModelessDialog && window[i] === window.showModelessDialog))
-								window[i] = function(){return true;};
-							else if (window[i] === window.onbeforeunload)	// To try to fix onbeforeunload pop ups some users report seeing but I can't replicate.
-								window.onbeforeunload = null;
-							else if (window[i] === window.onunload)
-								window.onunload = null;								
-							else
-								window[i] = function(){return "";};
-						}
-						break;							
-				}			
-			}
-			catch(err)
-			{}		
-		}
-		
-		for (var i in document)
-		{
-			try {
-				var jsType = typeof document[i];
-				switch (jsType.toUpperCase())
-				{					
-					case "FUNCTION":
-						document[i] = function(){return "";};
-						break;					
-				}			
-			}
-			catch(err)
-			{}		
-		}
-
-		try {
-			eval = function(){return "";};				
-			unescape = function(){return "";};
-			String = function(){return "";};
-			parseInt = function(){return "";};
-			parseFloat = function(){return "";};
-			Number = function(){return "";};
-			isNaN = function(){return "";};
-			isFinite = function(){return "";};
-			escape = function(){return "";};
-			encodeURIComponent = function(){return "";};
-			encodeURI = function(){return "";};
-			decodeURIComponent = function(){return "";};
-			decodeURI = function(){return "";};
-			Array = function(){return "";};
-			Boolean = function(){return "";};
-			Date = function(){return "";};
-			Math = function(){return "";};
-			Number = function(){return "";};
-			RegExp = function(){return "";};
-			
-			var oNav = navigator;
-			navigator = function(){return "";};
-			oNav = null;			
-		}
-		catch(err)
-		{}
-		
-	})();</script><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<html>
+	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <link href="http://gmpg.org/xfn/11" rel="profile">
   
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
@@ -78,14 +10,19 @@
   <link rel="stylesheet" href="css/hyde.css">
   <link rel="stylesheet" href="css/solarized_dark.css">
   <link rel="stylesheet" href="css/app.css">
-  <link rel="stylesheet" href="css/app.css">
   <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
   <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+
+	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
   
-  <link rel="shortcut icon" href="favicon.ico">
-  
-  <script type="text/javascript" src="highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
+  <script>
+  $(document).ready(function() {
+	  $('pre code').each(function(i, block) {
+		    hljs.highlightBlock(block);
+	  });
+  });
+  </script>
 </head>
 
 <body>
@@ -113,17 +50,78 @@
 <div class="post">
 
 <h1 id="toc_0">Documentation</h1>
-
 <p>This describes the components and design of Multivac.  You can use the <a href="quickstart.html">Quickstart</a> to deploy Multivac.</p>
 
-<h1 id="toc_1">Components</h1>
-All Multivac components use a common Redis instance for communication, queueing, and log retention
-<img src="multivac_diagram.png"></img>
+<ul>
+	<li><a href="#config">Config</a></li>
+	<li><a href="#webui">WebUI</a></li>
+	<li><a href="#api">API</a></li>
+	<li><a href="#chatbot">ChatBot</a></li>
+	<li><a href="#worker">Worker</a></li>
+</ul>
 
+<a name="config"></a>
+<h1 id="toc_1">Configuration</h1>
+<p>All Multivac components are configured via a common YAML configuration file.</p>
+<h4 id="toc_1">Example</h4>
+<pre><code class="yaml">#global config
+redis: "127.0.0.1:6379"
+actions:
+  - name: echo
+    cmd: /bin/echo
+    confirm_required: True
+
+#slackbot config
+slack_token: 1234
+
+#api config
+api_listen_port: 8000
+</code></pre>
+<h4 id="toc_1">Variables</h4>
+<ul>
+	<li>redis: "host:port" of the common redis instance</li> 
+	<li>actions: A list of configured actions to be used in the creation of jobs</li> 
+  <ul>
+  	<li>name: This serves as the command name to create the job via Slack message or API</li> 
+  	<li>cmd: Path of the command or script to execute</li> 
+  	<li>confirm_required: If True, a secondary confirmation will be required before the command is run</li> 
+	</ul>
+	<li>slack_token: Slack token used to connect to the Slack RTM API</li> 
+	<li>api_listen_port: Port for which the API and web interface will listen</li> 
+</ul>
+
+<a name="webui"></a>
+<h2 id="toc_1">WebUI</h2>
+<img style="padding: 10px; width=600px; margin-left: auto; margin-right: auto" src="webui.png"></img>
+<p>The web interface provides a real-time view into jobs and their respective logs. It also provides a method of creating jobs outside of your chat service</p>
+
+<a name="api"></a>
 <h2 id="toc_1">API</h2>
-<p>The Multivac web API provides a way to interact with jobs, actions, and logs via a RESTful interface.<br>Full documentation can be found <a href="api.html">here</a>.
-<h2 id="toc_1">Slackbot</h2>
+<p>The web API provides functionality to the WebUI and a way to further extend Multivac.<br>Full documentation can be found <a href="api.html">here</a>.
+
+<a name="chatbot"></a>
+<h2 id="toc_1">ChatBot</h2>
+<p>ChatBot is the base for communicating with Multivac via chat services, such as Slack<br>Full documentation can be found <a href="chatbot.html">here</a>.
+<h4 id="toc_1">BuiltIn Commands</h4>
+<ul>
+	<li>jobs</li>
+  <p>Returns all, pending, completed, or ready jobs</p>
+	<li>logs</li>
+<p>Returns logs for a given job ID</p>
+	<li>help</li>
+<p>Returns a list of all builtin commands and configured action commands</p>
+	<li>workers</li>
+<p>Returns currently registered worker processes by name and hostname</p>
+	<li>confirm</li>
+<p>Confirms a pending job, given a job ID</p>
+</ul>
+
+<h4 id="toc_1">Action Commands</h4>
+<p>Action commands are configured commands added to Multivac. They can be a added by providing a path to a script or executable in your <a href="config.html">config file</a></p>
+
+<a name="worker"></a>
 <h2 id="toc_1">Worker</h2>
+<p>The Multivac worker is where jobs are performed, streaming and storing their results back to be read via the API or ChatBot</p>
 
 </div>
 </div>
