@@ -12,7 +12,7 @@ body {
 }
 
 div.sidebar-about h1 {
-    font-family: "Cocomat", Verdana, Tahoma;
+	  font-family: 'Cocomat';
     font-size: 1.8em;
     letter-spacing: .45em;
     text-rendering: optimizeLegibility;
