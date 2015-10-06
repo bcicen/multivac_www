@@ -40,6 +40,9 @@
     <ul class="sidebar-nav">
       <li><a href="index.html">Home</a> </li>
       <li><a href="docs.html">Docs</a> </li>
+      <ul>
+        <li><a href="api.html">API</a> </li>
+      </ul>
       <li><a href="quickstart.html">Quickstart</a> </li>
       <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
     </ul>
@@ -61,6 +64,11 @@
 	<li><a href="#get-jobs">Get All Jobs</a></li>
 	<li><a href="#get-job">Get Job By ID</a></li>
 	<li><a href="#create-job">Create Job</a></li>
+</ul>
+
+<h2 id="toc_8">/confirm</h2>
+<ul>
+	<li><a href="#confirm">Confirm</a></li>
 </ul>
 
 <h2 id="toc_8">/actions</h2>
@@ -138,6 +146,10 @@ Content-Type application/json
     "id": "edba7a34a4b84d64b7ef69f47cf44748"
 }
 </code></pre>
+
+<p><a name="confirm"></a></p>
+<h2 id="toc_12">GET /confirm/&lt;job_id&gt</h2>
+<p>Confirms a pending job</p>
 
 <p><a name="get-actions"></a></p>
 <h2 id="toc_12">GET /actions</h2>
