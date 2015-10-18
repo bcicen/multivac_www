@@ -50,21 +50,50 @@
       <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
     </ul>
 
-    <p>© 215. All rights reserved. </p>
+    <p>© 2015. All rights reserved. </p>
   </div>
 </div>
 <div class="content container">
 <div class="post">
 
-<h1 id="toc_0">Multivac</h1>
+<h1 id="toc_1">Configuration</h1>
+<p>All Multivac components are configured via a common YAML configuration file.</p>
 
-<p>Multivac is a ChatOps framework with an integrated job queue, RESTful API, web and CLI interface. Currently ships with builtin support for Slack</p>
-<pre><code>@multivac: echo hello
-> running
-> [Sun Aug 30 18:19:13 2015] hello
+<h4 id="toc_1">/etc/multivac.yml example</h4>
+<pre><code class="yaml">#global config
+redis: "127.0.0.1:6379"
+actions:
+  - name: echo
+    cmd: /bin/echo
+    chatbot_strem: True
+    confirm_required: True
+
+  - name: cool-command
+    cmd: /usr/local/bin/mycoolscript.sh
+
+#slackbot config
+slack_token: 1234
+
+#api config
+api_listen_port: 8000
 </code></pre>
-<br>
-</div>
+<h4 id="toc_1">Configuration Values</h4>
+<ul>
+	<li><b>redis</b>(default: 127.0.0.1:6379): host and port of the redis instance to connect to</li> 
+	<li><b>actions</b>: A list of configured actions to be used in the creation of jobs. Actions accept the following parameters:</li> 
+  <ul>
+		<li><b>name</b></li> 
+		<p>This serves as the command name to create the job via Slack message or API</p>
+		<li><b>cmd</b></li> 
+		<p>Path of the command or script to execute</p>
+		<li><b>chatbot_stream</b>(default: True)</li> 
+		<p>If True, the output from the above command will be returned to the chat client. If False, the output of the above command will be stored but not sent back to the user as a chat response</p>
+		<li><b>confirm_required</b>(default: False)</li> 
+		<p>If True, a secondary confirmation will be required before the command is run. Default False</p>
+	</ul>
+	<li><b>slack_token</b>: Slack token used to connect to the Slack RTM API</li> 
+	<li><b>api_listen_port</b>(default: 8000): Port for which the API and web interface will listen</li> 
+</ul>
 </div>
 
 </body></html>

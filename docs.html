@@ -42,6 +42,9 @@
       <li><a href="docs.html">Docs</a> </li>
       <ul>
         <li><a href="api.html">API</a> </li>
+        <li><a href="commands.html">Bot Commands</a> </li>
+        <li><a href="cli.html">CLI Reference</a> </li>
+        <li><a href="config.html">Configuration</a> </li>
       </ul>
       <li><a href="quickstart.html">Quickstart</a> </li>
       <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
@@ -54,96 +57,20 @@
 <div class="post">
 
 <h1 id="toc_0">Documentation</h1>
-<p>This describes the components and design of Multivac.  You can use the <a href="quickstart.html">Quickstart</a> to deploy Multivac.</p>
+<p>This describes the various components of Multivac.  You can use the <a href="quickstart.html">Quickstart</a> to deploy Multivac.</p>
 
+<p>Multivac has four main components:<p>
 <ul>
-	<li><a href="#config">Config</a></li>
-	<li><a href="#running">CLI</a></li>
-	<li><a href="#webui">WebUI</a></li>
-	<li><a href="#api">API</a></li>
-	<li><a href="#chatbot">ChatBot</a></li>
-	<li><a href="#worker">Worker</a></li>
-</ul>
-
-<a name="config"></a>
-<h1 id="toc_1">Configuration</h1>
-<p>All Multivac components are configured via a common YAML configuration file.</p>
-<h4 id="toc_1">Example</h4>
-<pre><code class="yaml">#global config
-redis: "127.0.0.1:6379"
-actions:
-  - name: echo
-    cmd: /bin/echo
-    confirm_required: True
-
-#slackbot config
-slack_token: 1234
-
-#api config
-api_listen_port: 8000
-</code></pre>
-<h4 id="toc_1">Variables</h4>
-<ul>
-	<li>redis: "host:port" of the common redis instance</li> 
-	<li>actions: A list of configured actions to be used in the creation of jobs</li> 
-  <ul>
-  	<li>name: This serves as the command name to create the job via Slack message or API</li> 
-  	<li>cmd: Path of the command or script to execute</li> 
-  	<li>confirm_required: If True, a secondary confirmation will be required before the command is run</li> 
-	</ul>
-	<li>slack_token: Slack token used to connect to the Slack RTM API</li> 
-	<li>api_listen_port: Port for which the API and web interface will listen</li> 
-</ul>
-
-<a name="running"></a>
-<h2 id="toc_1">CLI</h2>
-<p>After installing Multivac, components can be launched with the cli utility:</p>
-<h4 id="toc_1">Usage</h4>
-<pre><code class="bash">multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api,console}
-
-multivac v0.7
-
-positional arguments:
-  {worker,slackbot,api,console}
-
-optional arguments:
-  -h, --help            show this help message and exit
-  -c CONFIG_PATH        path to config file (default: /etc/multivac.yml)
-  -d                    enable debug output
-</code></pre>
+	<li>Worker: Executes commands, keeping track of their state and retaining command output</li>
+	<li>API: Provides the WebUI as well as a RESTful interface for extending Multivac</li>
+	<li>Slackbot: Listens for commands issued via Slack, submitting jobs and streaming output back to the user</li>
+	<li>Redis: used for communication between components, job tracking, and log retention</li>
+<img style="padding: 10px; margin-left: auto; margin-right: auto" src="multivac_diagram.png"></img>
 
 <a name="webui"></a>
 <h2 id="toc_1">WebUI</h2>
 <img style="padding: 10px; width=600px; margin-left: auto; margin-right: auto" src="webui.png"></img>
 <p>The web interface provides a real-time view into jobs and their respective logs. It also provides a method of creating jobs outside of your chat service</p>
-
-<a name="api"></a>
-<h2 id="toc_1">API</h2>
-<p>The web API provides functionality to the WebUI and a way to further extend Multivac.<br>Full documentation can be found <a href="api.html">here</a>.
-
-<a name="chatbot"></a>
-<h2 id="toc_1">ChatBot</h2>
-<p>ChatBot is the base for communicating with Multivac via chat services, such as Slack<br>Full documentation can be found <a href="chatbot.html">here</a>.
-<h4 id="toc_1">BuiltIn Commands</h4>
-<ul>
-	<li>jobs</li>
-  <p>Returns all, pending, completed, or ready jobs</p>
-	<li>logs</li>
-<p>Returns logs for a given job ID</p>
-	<li>help</li>
-<p>Returns a list of all builtin commands and configured action commands</p>
-	<li>workers</li>
-<p>Returns currently registered worker processes by name and hostname</p>
-	<li>confirm</li>
-<p>Confirms a pending job, given a job ID</p>
-</ul>
-
-<h4 id="toc_1">Action Commands</h4>
-<p>Action commands are configured commands added to Multivac. They can be a added by providing a path to a script or executable in your <a href="config.html">config file</a></p>
-
-<a name="worker"></a>
-<h2 id="toc_1">Worker</h2>
-<p>The Multivac worker is where jobs are performed, streaming and storing their results back to be read via the API or ChatBot</p>
 
 </div>
 </div>

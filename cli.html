@@ -50,20 +50,26 @@
       <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
     </ul>
 
-    <p>© 215. All rights reserved. </p>
+    <p>© 2015. All rights reserved. </p>
   </div>
 </div>
 <div class="content container">
 <div class="post">
 
-<h1 id="toc_0">Multivac</h1>
-
-<p>Multivac is a ChatOps framework with an integrated job queue, RESTful API, web and CLI interface. Currently ships with builtin support for Slack</p>
-<pre><code>@multivac: echo hello
-> running
-> [Sun Aug 30 18:19:13 2015] hello
-</code></pre>
-<br>
+<h1 id="toc_0">Commandline Reference</h1>
+<p>After installing Multivac, components can be launched with the cli utility:</p>
+<pre><code class="bash">multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api,console}</code></pre>
+<h4 id="toc_1">Arguments</h4>
+<ul>
+	<li><b>-c</b></li>
+	<p>Path to multivac config file (default: /etc/multivac.yml)</p>
+	<li><b>-d</b></li>
+	<p>Run in debug mode</p>
+	<li><b>-h</b></li>
+	<p>Show help dialog and exit</p>
+	<li><b>role</b></li>
+	<p>One of worker, slackbot, api or console</p>
+</ul>
 </div>
 </div>
 

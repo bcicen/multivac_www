@@ -1,0 +1,82 @@
+<html>
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
+</head>
+
+<body>
+<div class="sidebar">
+  <img id="logo" class="center" src="logo.png">
+  <div class="container sidebar-sticky">
+    <div class="sidebar-about">
+      <h1 class="cocomat">MULTIVAC</h1>
+      <p class="lead">
+      ChatOps Framework 
+      </p>
+    </div>
+
+    <ul class="sidebar-nav">
+      <li><a href="index.html">Home</a> </li>
+      <li><a href="docs.html">Docs</a> </li>
+      <ul>
+        <li><a href="api.html">API</a> </li>
+        <li><a href="commands.html">Bot Commands</a> </li>
+        <li><a href="cli.html">CLI Reference</a> </li>
+        <li><a href="config.html">Configuration</a> </li>
+      </ul>
+      <li><a href="quickstart.html">Quickstart</a> </li>
+      <li><a href="https://github.com/bcicen/multivac">GitHub</a></li>
+    </ul>
+
+    <p>© 2015. All rights reserved. </p>
+  </div>
+</div>
+<div class="content container">
+  <div class="post">
+
+    <h1 id="toc_0">Commands</h1>
+    <p>Multivac comes with a number of built-in commands and allows any arbitrary script or executable to be added as a custom command.</p>
+    <h4 id="toc_1">BuiltIn Commands</h4>
+    <ul>
+      <li>jobs &lt;all,pending,completed,ready&gt;</li>
+      <p>Returns information on jobs in a given state.</p>
+      <li>logs &lt;id&gt;</li>
+      <p>Returns the output log for a given job ID</p>
+      <li>confirm &lt;id&gt;</li>
+      <p>Confirms a pending job, given a job ID</p>
+      <li>help</li>
+      <p>Returns a list of all builtin commands and configured action commands</p>
+      <li>workers</li>
+      <p>Returns currently registered workers by name and hostname</p>
+    </ul>
+
+    <h4 id="toc_1">Action Commands</h4>
+    <p>Action commands are configured commands added to Multivac.</p>
+    <p>To add a new command, append it to the "actions" section of your Multivac <a href="config.html">configuration file</a></p>
+
+  </div>
+</div>
+
+</body></html>
