@@ -1,29 +1,29 @@
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
 
-  <title>Multivac</title>
-  
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/poole.css">
-  <link rel="stylesheet" href="css/hyde.css">
-  <link rel="stylesheet" href="css/solarized_dark.css">
-  <link rel="stylesheet" href="css/app.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-	  });
-  });
-  </script>
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -54,51 +54,51 @@
   </div>
 </div>
 <div class="content container">
-<div class="post">
+  <div class="post">
 
-<h1 id="toc_0">API Documentation</h1>
+    <h1 id="toc_0">API Documentation</h1>
 
-<p>The web API provides functionality to the WebUI and a way to further extend Multivac.</p>
+    <p>The web API provides functionality to the WebUI and a way to further extend Multivac.</p>
 
-<h1 id="toc_1">Endpoints</h1>
+    <h1 id="toc_1">Endpoints</h1>
 
-<h2 id="toc_8">/jobs</h2>
-<ul>
-	<li><a href="#get-jobs">Get All Jobs</a></li>
-	<li><a href="#get-job">Get Job By ID</a></li>
-	<li><a href="#create-job">Create Job</a></li>
-</ul>
+    <h2 id="toc_8">/jobs</h2>
+    <ul>
+      <li><a href="#get-jobs">Get All Jobs</a></li>
+      <li><a href="#get-job">Get Job By ID</a></li>
+      <li><a href="#create-job">Create Job</a></li>
+    </ul>
 
-<h2 id="toc_8">/confirm</h2>
-<ul>
-	<li><a href="#confirm">Confirm</a></li>
-</ul>
+    <h2 id="toc_8">/confirm</h2>
+    <ul>
+      <li><a href="#confirm">Confirm</a></li>
+    </ul>
 
-<h2 id="toc_8">/actions</h2>
-<ul>
-	<li><a href="#get-actions">Get Actions</a></li>
-</ul>
+    <h2 id="toc_8">/actions</h2>
+    <ul>
+      <li><a href="#get-actions">Get Actions</a></li>
+    </ul>
 
-<h2 id="toc_8">/logs</h2>
-<ul>
-	<li><a href="#get-logs">Get Logs</a></li>
-</ul>
+    <h2 id="toc_8">/logs</h2>
+    <ul>
+      <li><a href="#get-logs">Get Logs</a></li>
+    </ul>
 
-<h2 id="toc_8">/workers</h2>
-<ul>
-	<li><a href="#get-workers">Get Workers</a></li>
-</ul>
+    <h2 id="toc_8">/workers</h2>
+    <ul>
+      <li><a href="#get-workers">Get Workers</a></li>
+    </ul>
 
-<h2 id="toc_8">/version</h2>
-<ul>
-	<li><a href="#get-version">Get Version</a></li>
-</ul>
+    <h2 id="toc_8">/version</h2>
+    <ul>
+      <li><a href="#get-version">Get Version</a></li>
+    </ul>
 
-<p><a name="get-jobs"></a></p>
-<h2 id="toc_12">GET /jobs</h2>
-<p>Returns a list of all jobs</p>
+    <p><a name="get-jobs"></a></p>
+    <h2 id="toc_12">GET /jobs</h2>
+    <p>Returns a list of all jobs</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 Content-Type application/json
 [
   {
@@ -111,13 +111,13 @@ Content-Type application/json
     "status": "completed"
   }
 ]
-</code></pre>
+    </code></pre>
 
-<p><a name="get-job"></a></p>
-<h2 id="toc_12">GET /jobs/&lt;job_id&gt</h2>
-<p>Returns a single job matching provided ID</p>
+    <p><a name="get-job"></a></p>
+    <h2 id="toc_12">GET /jobs/&lt;job_id&gt</h2>
+    <p>Returns a single job matching provided ID</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 Content-Type application/json
   {
     "args": "hello",
@@ -128,37 +128,37 @@ Content-Type application/json
     "name": "echo",
     "status": "completed"
   }
-</code></pre>
+    </code></pre>
 
-<p><a name="create-job"></a></p>
-<h2 id="toc_12">POST /jobs</h2>
-<p>Create a new job and append it to the worker queue</p>
+    <p><a name="create-job"></a></p>
+    <h2 id="toc_12">POST /jobs</h2>
+    <p>Create a new job and append it to the worker queue</p>
 
-<p>Request</p>
-<pre><code class="json">
+    <p>Request</p>
+    <pre><code class="json">
 Content-Type application/json
   {
     "action": "echo",
     "action_args": "hello"
   }
-</code></pre>
-<p>Response</p>
-<pre><code class="json">
+    </code></pre>
+    <p>Response</p>
+    <pre><code class="json">
 Content-Type application/json
 {
     "id": "edba7a34a4b84d64b7ef69f47cf44748"
 }
-</code></pre>
+    </code></pre>
 
-<p><a name="confirm"></a></p>
-<h2 id="toc_12">GET /confirm/&lt;job_id&gt</h2>
-<p>Confirms a pending job</p>
+    <p><a name="confirm"></a></p>
+    <h2 id="toc_12">GET /confirm/&lt;job_id&gt</h2>
+    <p>Confirms a pending job</p>
 
-<p><a name="get-actions"></a></p>
-<h2 id="toc_12">GET /actions</h2>
-<p>Returns a list of all configured actions</p>
+    <p><a name="get-actions"></a></p>
+    <h2 id="toc_12">GET /actions</h2>
+    <p>Returns a list of all configured actions</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 Content-Type application/json
 [
   {
@@ -167,28 +167,28 @@ Content-Type application/json
     "name": "echo"
   }
 ]
-</code></pre>
+    </code></pre>
 
-<p><a name="get-logs"></a></p>
-<h2 id="toc_12">GET /logs/&lt;job_id&gt</h2>
-<p>Returns output log for provided job ID.<br>Optionally append ?json=true parameter to return logs in a JSON-formatted array</p>
+    <p><a name="get-logs"></a></p>
+    <h2 id="toc_12">GET /logs/&lt;job_id&gt</h2>
+    <p>Returns output log for provided job ID.<br>Optionally append ?json=true parameter to return logs in a JSON-formatted array</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 [Tue Aug 25 22:17:37 2015] hello
-</code></pre>
-or
-<pre><code class="json">
+    </code></pre>
+    or
+    <pre><code class="json">
 Content-Type application/json
 [
     "[Tue Aug 25 22:17:37 2015] hello"
 ]
-</code></pre>
+    </code></pre>
 
-<p><a name="get-workers"></a></p>
-<h2 id="toc_12">GET /workers</h2>
-<p>Return a list of registered job workers</p>
+    <p><a name="get-workers"></a></p>
+    <h2 id="toc_12">GET /workers</h2>
+    <p>Return a list of registered job workers</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 Content-Type application/json
 [
     {
@@ -196,19 +196,19 @@ Content-Type application/json
         "name": "Jacqueline"
     }
 ]
-</code></pre>
+    </code></pre>
 
-<p><a name="get-version"></a></p>
-<h2 id="toc_12">GET /version</h2>
-<p>Return Multivac version</p>
+    <p><a name="get-version"></a></p>
+    <h2 id="toc_12">GET /version</h2>
+    <p>Return Multivac version</p>
 
-<pre><code class="json">
+    <pre><code class="json">
 Content-Type application/json
 {
     "version": "v0.7"
 }
-</code></pre>
+    </code></pre>
 
-</div>
+  </div>
 </div>
 </body></html>

@@ -1,29 +1,29 @@
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
 
-  <title>Multivac</title>
-  
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/poole.css">
-  <link rel="stylesheet" href="css/hyde.css">
-  <link rel="stylesheet" href="css/solarized_dark.css">
-  <link rel="stylesheet" href="css/app.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-	  });
-  });
-  </script>
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -54,31 +54,31 @@
   </div>
 </div>
 <div class="content container">
-<div class="post">
+  <div class="post">
 
-<h1 id="toc_0">Quickstart</h1>
-To get started with Multivac using Docker, see <a href="https://github.com/bcicen/multivac">the Multivac README</a>
+    <h1 id="toc_0">Quickstart</h1>
+    To get started with Multivac using Docker, see <a href="https://github.com/bcicen/multivac">the Multivac README</a>
 
-<h2 id="toc_1">Installing</h2>
-Multivac requires Python3
+    <h2 id="toc_1">Installing</h2>
+    Multivac requires Python3
 
-<pre><code class="bash">git clone https://github.com/bcicen/multivac.git
+    <pre><code class="bash">git clone https://github.com/bcicen/multivac.git
 cd multivac
 pip3 install -r requirements.txt
 python3 setup.py install
-</code></pre>
+    </code></pre>
 
-<h2 id="toc_1">Configuration</h2>
-Copy the sample_config.yml file or create your own config file as described <a href="docs.html#config">here</a>
+    <h2 id="toc_1">Configuration</h2>
+    Copy the sample_config.yml file or create your own config file as described <a href="docs.html#config">here</a>
 
-<h2 id="toc_1">Running</h2>
-<p>To bring up a full stack, start the worker, api, and slackbot processes using the Multivac command line utility:</p>
-<pre><code class="bash">multivac -c /path/to/config.yml worker
+    <h2 id="toc_1">Running</h2>
+    <p>To bring up a full stack, start the worker, api, and slackbot processes using the Multivac command line utility:</p>
+    <pre><code class="bash">multivac -c /path/to/config.yml worker
 multivac -c /path/to/config.yml api
 multivac -c /path/to/config.yml slackbot</code></pre>
 
-<p> Usage: </p>
-<pre><code class="bash">usage: multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api}
+    <p> Usage: </p>
+    <pre><code class="bash">usage: multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api}
 
 multivac v0.7
 
@@ -89,9 +89,9 @@ optional arguments:
   -h, --help            show this help message and exit
   -c CONFIG_PATH        path to config file (default: /etc/multivac.yml)
   -d                    enable debug output
-</code></pre>
+    </code></pre>
 
-</div>
+  </div>
 </div>
 
 </body></html>

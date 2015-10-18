@@ -1,29 +1,29 @@
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
 
-  <title>Multivac</title>
-  
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/poole.css">
-  <link rel="stylesheet" href="css/hyde.css">
-  <link rel="stylesheet" href="css/solarized_dark.css">
-  <link rel="stylesheet" href="css/app.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-	  });
-  });
-  </script>
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -54,25 +54,25 @@
   </div>
 </div>
 <div class="content container">
-<div class="post">
+  <div class="post">
 
-<h1 id="toc_0">Documentation</h1>
-<p>This describes the various components of Multivac.  You can use the <a href="quickstart.html">Quickstart</a> to deploy Multivac.</p>
+    <h1 id="toc_0">Documentation</h1>
+    <p>This describes the various components of Multivac.  You can use the <a href="quickstart.html">Quickstart</a> to deploy Multivac.</p>
 
-<p>Multivac has four main components:<p>
-<ul>
-	<li>Worker: Executes commands, keeping track of their state and retaining command output</li>
-	<li>API: Provides the WebUI as well as a RESTful interface for extending Multivac</li>
-	<li>Slackbot: Listens for commands issued via Slack, submitting jobs and streaming output back to the user</li>
-	<li>Redis: used for communication between components, job tracking, and log retention</li>
-<img style="padding: 10px; margin-left: auto; margin-right: auto" src="multivac_diagram.png"></img>
+    <p>Multivac has four main components:<p>
+    <ul>
+      <li>Worker: Executes commands, keeping track of their state and retaining command output</li>
+      <li>API: Provides the WebUI as well as a RESTful interface for extending Multivac</li>
+      <li>Slackbot: Listens for commands issued via Slack, submitting jobs and streaming output back to the user</li>
+      <li>Redis: used for communication between components, job tracking, and log retention</li>
+      <img style="padding: 10px; margin-left: auto; margin-right: auto" src="multivac_diagram.png"></img>
 
-<a name="webui"></a>
-<h2 id="toc_1">WebUI</h2>
-<img style="padding: 10px; width=600px; margin-left: auto; margin-right: auto" src="webui.png"></img>
-<p>The web interface provides a real-time view into jobs and their respective logs. It also provides a method of creating jobs outside of your chat service</p>
+      <a name="webui"></a>
+      <h2 id="toc_1">WebUI</h2>
+      <img style="padding: 10px; width=600px; margin-left: auto; margin-right: auto" src="webui.png"></img>
+      <p>The web interface provides a real-time view into jobs and their respective logs. It also provides a method of creating jobs outside of your chat service</p>
 
-</div>
-</div>
+    </div>
+  </div>
 
-</body></html>
+  </body></html>

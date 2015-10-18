@@ -1,29 +1,29 @@
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
 
-  <title>Multivac</title>
-  
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/poole.css">
-  <link rel="stylesheet" href="css/hyde.css">
-  <link rel="stylesheet" href="css/solarized_dark.css">
-  <link rel="stylesheet" href="css/app.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-	  });
-  });
-  </script>
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -54,23 +54,23 @@
   </div>
 </div>
 <div class="content container">
-<div class="post">
+  <div class="post">
 
-<h1 id="toc_0">Commandline Reference</h1>
-<p>After installing Multivac, components can be launched with the cli utility:</p>
-<pre><code class="bash">multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api,console}</code></pre>
-<h4 id="toc_1">Arguments</h4>
-<ul>
-	<li><b>-c</b></li>
-	<p>Path to multivac config file (default: /etc/multivac.yml)</p>
-	<li><b>-d</b></li>
-	<p>Run in debug mode</p>
-	<li><b>-h</b></li>
-	<p>Show help dialog and exit</p>
-	<li><b>role</b></li>
-	<p>One of worker, slackbot, api or console</p>
-</ul>
-</div>
+    <h1 id="toc_0">Commandline Reference</h1>
+    <p>After installing Multivac, components can be launched with the cli utility:</p>
+    <pre><code class="bash">multivac [-h] [-c CONFIG_PATH] [-d] {worker,slackbot,api,console}</code></pre>
+    <h4 id="toc_1">Arguments</h4>
+    <ul>
+      <li><b>-c</b></li>
+      <p>Path to multivac config file (default: /etc/multivac.yml)</p>
+      <li><b>-d</b></li>
+      <p>Run in debug mode</p>
+      <li><b>-h</b></li>
+      <p>Show help dialog and exit</p>
+      <li><b>role</b></li>
+      <p>One of worker, slackbot, api or console</p>
+    </ul>
+  </div>
 </div>
 
 </body></html>

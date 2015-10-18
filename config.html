@@ -1,29 +1,29 @@
 <html>
-	<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-  <link href="http://gmpg.org/xfn/11" rel="profile">
-  
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link href="http://gmpg.org/xfn/11" rel="profile">
 
-  <title>Multivac</title>
-  
-	<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
-  <link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
-  <link rel="stylesheet" href="css/poole.css">
-  <link rel="stylesheet" href="css/hyde.css">
-  <link rel="stylesheet" href="css/solarized_dark.css">
-  <link rel="stylesheet" href="css/app.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
 
-	<script src="//code.jquery.com/jquery-1.10.2.js"></script>
-	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
-  
-  <script>
-  $(document).ready(function() {
-	  $('pre code').each(function(i, block) {
-		    hljs.highlightBlock(block);
-	  });
-  });
-  </script>
+<title>Multivac</title>
+
+<link href='https://fonts.googleapis.com/css?family=Product+Sans' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=News+Cycle:400,700' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Poiret+One' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/poole.css">
+<link rel="stylesheet" href="css/hyde.css">
+<link rel="stylesheet" href="css/solarized_dark.css">
+<link rel="stylesheet" href="css/app.css">
+
+<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/8.7/highlight.min.js"></script>
+
+<script>
+$(document).ready(function() {
+    $('pre code').each(function(i, block) {
+      hljs.highlightBlock(block);
+      });
+    });
+</script>
 </head>
 
 <body>
@@ -54,13 +54,13 @@
   </div>
 </div>
 <div class="content container">
-<div class="post">
+  <div class="post">
 
-<h1 id="toc_1">Configuration</h1>
-<p>All Multivac components are configured via a common YAML configuration file.</p>
+    <h1 id="toc_1">Configuration</h1>
+    <p>All Multivac components are configured via a common YAML configuration file.</p>
 
-<h4 id="toc_1">/etc/multivac.yml example</h4>
-<pre><code class="yaml">#global config
+    <h4 id="toc_1">/etc/multivac.yml example</h4>
+    <pre><code class="yaml">#global config
 redis: "127.0.0.1:6379"
 actions:
   - name: echo
@@ -76,24 +76,24 @@ slack_token: 1234
 
 #api config
 api_listen_port: 8000
-</code></pre>
-<h4 id="toc_1">Configuration Values</h4>
-<ul>
-	<li><b>redis</b>(default: 127.0.0.1:6379): host and port of the redis instance to connect to</li> 
-	<li><b>actions</b>: A list of configured actions to be used in the creation of jobs. Actions accept the following parameters:</li> 
-  <ul>
-		<li><b>name</b></li> 
-		<p>This serves as the command name to create the job via Slack message or API</p>
-		<li><b>cmd</b></li> 
-		<p>Path of the command or script to execute</p>
-		<li><b>chatbot_stream</b>(default: True)</li> 
-		<p>If True, the output from the above command will be returned to the chat client. If False, the output of the above command will be stored but not sent back to the user as a chat response</p>
-		<li><b>confirm_required</b>(default: False)</li> 
-		<p>If True, a secondary confirmation will be required before the command is run. Default False</p>
-	</ul>
-	<li><b>slack_token</b>: Slack token used to connect to the Slack RTM API</li> 
-	<li><b>api_listen_port</b>(default: 8000): Port for which the API and web interface will listen</li> 
-</ul>
-</div>
+    </code></pre>
+    <h4 id="toc_1">Configuration Values</h4>
+    <ul>
+      <li><b>redis</b>(default: 127.0.0.1:6379): host and port of the redis instance to connect to</li> 
+      <li><b>actions</b>: A list of configured actions to be used in the creation of jobs. Actions accept the following parameters:</li> 
+      <ul>
+        <li><b>name</b></li> 
+        <p>This serves as the command name to create the job via Slack message or API</p>
+        <li><b>cmd</b></li> 
+        <p>Path of the command or script to execute</p>
+        <li><b>chatbot_stream</b>(default: True)</li> 
+        <p>If True, the output from the above command will be returned to the chat client. If False, the output of the above command will be stored but not sent back to the user as a chat response</p>
+        <li><b>confirm_required</b>(default: False)</li> 
+        <p>If True, a secondary confirmation will be required before the command is run. Default False</p>
+      </ul>
+      <li><b>slack_token</b>: Slack token used to connect to the Slack RTM API</li> 
+      <li><b>api_listen_port</b>(default: 8000): Port for which the API and web interface will listen</li> 
+    </ul>
+  </div>
 
-</body></html>
+  </body></html>
