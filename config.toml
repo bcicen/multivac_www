@@ -1,0 +1,24 @@
+BaseUrl= "http://multivac.vektor.nyc"
+LanguageCode= "en-US"
+Title= "multivac"
+paginate = 5
+Copyright = "VektorLab - 2015"
+canonifyurls = true
+
+[params]
+  description = "Extensible ChatOps bot framework for Slack"
+  cover = "images/cover.jpg"
+  logo = "images/bot.png"
+  googleAnalyticsUserID = "#"
+
+[[menu.main]]
+    name = "about hugo"
+    pre = "<i class='fa fa-heart'></i>"
+    weight = -110
+    identifier = "about"
+    url = "/about/"
+[[menu.main]]
+    name = "getting started"
+    pre = "<i class='fa fa-road'></i>"
+    weight = -100
+    url = "/getting-started/"
