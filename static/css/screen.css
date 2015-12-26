@@ -292,7 +292,7 @@ hr {
   height: 1px;
   border: 0;
   border-top: #EFEFEF 1px solid;
-  margin: 3.2em 0;
+  margin: .8em 0;
   padding: 0;
 }
 
@@ -344,6 +344,7 @@ pre {
   display: inline-block;
   text-align: left;
   padding: 10px;
+  margin:auto;
   font-family: Inconsolata, monospace, sans-serif;
   font-size: 0.9em;
   white-space: pre;
@@ -1125,6 +1126,7 @@ with browser width % calculations and rounding */
   height: 35em;
   margin: auto;
   font-size: 1.2em;
+  background-color: #F6F6F6;
 }
 
 .tron p {
@@ -1136,10 +1138,10 @@ with browser width % calculations and rounding */
 }
 
 /*#feature-box h2 {
-  margin: auto;
-  font-size: 3em;
-  line-height: 5em;
-  vertical-align: middle;
+margin: auto;
+font-size: 3em;
+line-height: 5em;
+vertical-align: middle;
 }*/
 
 .post-content {
@@ -1152,7 +1154,7 @@ with browser width % calculations and rounding */
 text column to break out. */
 .post-content img {
   max-width: 100%;
-  height: auto;
+  margin: auto;
   /* Centers an image by (1) pushing its left edge to the
   center of its container and (2) shifting the entire image
   in the opposite direction by half its own width.
@@ -1565,10 +1567,10 @@ pagination prev/next links */
   }*/
 
 header.post-header {
-padding: 20px 20px 0 20px;
+  padding: 20px 20px 0 20px;
 }
 section.post-content {
-padding: 20px;
+  padding: 20px;
 }
 
 footer.post-meta {
@@ -1713,39 +1715,45 @@ article.post.post {
     margin: 0;
   }
 
-.page-title {
-  font-size: 1em;
-  letter-spacing: -1px;
-}
+  .page-title {
+    font-size: 1em;
+    letter-spacing: -1px;
+  }
   .page-title h1 {
     font-size: .6em;
     font-weight: 100;
-  font-family: "CocomatUltraLight";
-  letter-spacing: 15px;
-  color: #fff;
-}
+    font-family: "CocomatUltraLight";
+    letter-spacing: 15px;
+    color: #fff;
+  }
 
-#feature-box {
-  width: 20%; 
-  padding: 0px;
-  margin-bottom: 5px;
-}
+  #feature-box {
+    width: 20%; 
+    padding: 0px;
+    margin-bottom: 5px;
+  }
 
-.fa {
-  font-size: .8em;
-}
+  .fa {
+    font-size: .8em;
+  }
 
-#feature-box p {
-  display: none;
-}
+  #feature-box p {
+    display: none;
+  }
 
-#tron-box > div {
-  width: 100%;
-}
+  #tron-box > div {
+    width: 100%;
+  }
 
-pre {
-  display: block;
-}
+  pre {
+    display: block;
+  }
+
+  .tron p {
+    border-radius: 20px;
+    max-width: 90%;
+    background-color: rgba(255, 255, 255, 0.7);
+  }
 
   .main-header {
     margin-bottom: 15px;
@@ -1872,7 +1880,7 @@ pre {
   }
 
   p, ul, ol, dl {
-    font-size: 0.95em;
+    font-size: 0.8em;
     margin: 0 0 2.5rem 0;
   }
 
@@ -1901,7 +1909,6 @@ pre {
   h2 {
     font-size: 2.4rem;
     letter-spacing: 0;
-    margin: 1em 0 1em 0;
   }
 
   h3 {
