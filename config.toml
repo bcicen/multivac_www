@@ -7,7 +7,6 @@ canonifyurls = true
 
 [params]
   description = "Extensible ChatOps bot framework for Slack"
-  cover = "images/cover.jpg"
   logo = "images/bot.png"
   googleAnalyticsUserID = "#"
 

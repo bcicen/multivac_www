@@ -1,87 +1,99 @@
 {{ partial "header.html" . }}
 
-{{if .Site.Params.cover}}
-  <header class="main-header " style="background-image: url({{.Site.BaseURL}}{{.Site.Params.cover}})">
-{{else}}
-  <header class="main-header no-cover">
-{{end}}
-
-    <nav class="main-nav overlay clearfix">
-      <a class="menu-button" href="#"><span class="burger">&#9776;</span></a>
-    </nav>
-    <div class="vertical">
-      <div class="main-header-content inner">
-        <img class="blog-logo" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Multivac" />
-        <span class="page-title">
-          <h1>
-            <a class="btn-bootstrap-2 title-scroll" href="#content">{{ .Site.Title }}</a>
-          </h1>
-          <h2 class="page-description">{{ .Site.Params.description }}</h2>
-          <br>
-          <br>
-          <!--<a class="title-link" href="#">quickstart</a>
-            <a class="title-link" href="#">docs</a>
-            <a class="title-link" href="#">github</a> -->
-        </span>
-      </div>
+<header class="main-header">
+  <!--
+  <nav class="main-nav overlay clearfix">
+    <a class="menu-button" href="#"><span class="burger">&#9776;</span></a>
+    </nav> -->
+  <div class="vertical">
+    <div class="main-header-content inner">
+      <img class="blog-logo" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Multivac" />
+      <br>
+      <span class="page-title">
+        <h1>{{ .Site.Title }}</h1>
+        <h2 class="page-description">{{ .Site.Params.description }}</h2>
+        <br>
+        <br>
+        <!--<a class="title-link" href="#">quickstart</a>
+          <a class="title-link" href="#">docs</a>
+          <a class="title-link" href="#">github</a> -->
+      </span>
     </div>
-    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+  </div>
+  <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
 
-  </header>
+</header>
 
-  <main id="content" class="content" role="main">
-  <div class="post-content">
-    <h2 class="wow fadeIn" data-wow-delay=".9s">ChatOps, simplified</h2>
+<main id="content" class="content" role="main">
+<div class="post-content">
+  <h2 class="wow fadeIn" data-wow-delay=".9s">ChatOps, simplified</h2>
 
-    <a href="javascript:update_tron('tron1')">
-      <div id="feature-box" class="feature-dark wow fadeIn" data-wow-delay=".4s">
-        <i class="fa fa-terminal fa-3x"></i>
-        <br><p>Use your existing scripts</p>
-      </div>
+  <div id="feature-box">
+    <a class="feature-dark wow fadeIn" data-wow-delay=".4s" href="javascript:update_tron('tron1')">
+      <i class="fa fa-terminal fa-3x"></i>
+      <p>Drop-in Commands</p>
     </a>
 
-    <a href="javascript:update_tron('tron2')">
-      <div id="feature-box" class="feature-light wow fadeIn" data-wow-delay=".5s">
-        <i class="fa fa-cogs fa-3x wow fadeIn"></i>
-        <br><p>Full-featured API</p>
-      </div>
+    <a class="feature-light wow fadeIn" data-wow-delay=".5s" href="javascript:update_tron('tron2')">
+      <i class="fa fa-cogs fa-3x wow fadeIn"></i>
+      <p>Featureful API</p>
     </a>
 
-    <a href="javascript:update_tron('tron3')">
-      <div id="feature-box" class="feature-dark wow fadeIn" data-wow-delay=".6s">
-        <i class="fa fa-dashboard fa-3x wow fadeIn"></i>
-        <br><p>Built-in dashboard</p>
-      </div>
+    <a class="feature-dark wow fadeIn" data-wow-delay=".6s" href="javascript:update_tron('tron3')">
+      <i class="fa fa-dashboard fa-3x wow fadeIn"></i>
+      <p>Built-in dashboard</p>
     </a>
 
-    <a href="javascript:update_tron('tron4')">
-      <div id="feature-box" class="feature-light wow fadeIn" data-wow-delay=".7s">
-        <i class="fa fa-github fa-3x wow fadeIn"></i>
-        <br><p>Open Source</p>
-      </div>
+    <a class="feature-light wow fadeIn" data-wow-delay=".7s" href="javascript:update_tron('tron4')">
+      <i class="fa fa-github fa-3x wow fadeIn"></i>
+      <p>Open Software</p>
     </a>
-
-    <div id="tron-box">
-      <div id="tron0" class="tron">
-        <img style="padding-top: 7em; opacity: 0.4;" src="images/logo_grey.png" />
-      </div>
-
-      <div id="tron1" class="tron">
-        <pre style="max-width: 45%;"><img src="images/actions.png"></img></pre>
-        <pre style="max-width: 45%;"><img src="images/actions2.png"></img></pre>
-        <hr>
-        <p>Easily configurable Multivac action commands use your existing scripts to make Slack your new platform for DevOps</p>
-        <p>Extend the functionality of your action commands with output streaming or summary, command confirmation, and access lists for restricting commands to users or groups</p>
-      </div>
-      <div id="tron2" class="tron">2</div>
-      <div id="tron3" class="tron">
-        <pre style="width: 80%;"><img src="images/webui.png"></img></pre>
-        <p>Multivac ships with a built-in WebUI to monitor real-time activity across all channels, review full output logs of previous commands, and manually trigger Multivac actions.</p>
-      </div>
-      <div id="tron4" class="tron">4</div>
-    </div>
 
   </div>
-  </main>
 
-  {{ partial "footer.html" . }}
+  <div id="tron-box">
+    <div id="tron0" class="tron">
+      <img style="padding: 4em; width: 25%; opacity: 0.4;" src="images/logo_grey.png" />
+    </div>
+
+    <div id="tron1" class="tron">
+      <h2>Use your existing scripts</h2>
+      <pre><img src="images/actions.png"></img></pre>
+      <hr>
+      <p>Add your existing scripts as Multivac action commands to make Slack a complete DevOps platform; extending functionality with a growing set of features:</p>
+      <ul>
+      <li>Output streaming</li>
+      <li>Result summary</li>
+      <li>Command confirmation</li>
+      <li>Access lists for restricting commands to users or groups</li>
+      </ul>
+    </div>
+    <div id="tron2" class="tron">
+      <h2>Extensible API</h2>
+      <pre><img src="images/api.png"></img></pre>
+      <p>Multivac comes with a full-featured API for futher automation</p>
+    </div>
+    <div id="tron3" class="tron">
+      <pre><img src="images/webui.png"></img></pre>
+      <p>Multivac ships with a built-in WebUI to monitor real-time activity across all channels, review full output logs of previous commands, and manually trigger Multivac actions.</p>
+    </div>
+    <div id="tron4" class="tron">
+      <p>Multivac core and all documentation is completely open source; PRs are always welcome!</p>
+    </div>
+  </div>
+
+</div>
+</main>
+
+<main id="content2" class="content content-dark" role="main">
+<div class="post-content">
+  <h2 class="wow fadeIn" data-wow-delay=".9s">ChatOps, simplified</h2>
+  <p>
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
+
+  Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.
+  </p>
+</div>
+</main>
+
+{{ partial "footer.html" . }}
