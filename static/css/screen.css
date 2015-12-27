@@ -871,7 +871,6 @@ body.nav-opened .menu-button .word {
 
 /* The details of your blog. Defined in ghost/settings/ */
 .page-title {
-  width: 600px;
   margin: auto;
   text-align: center;
 }
@@ -881,14 +880,13 @@ body.nav-opened .menu-button .word {
   font-size: 4em;
   font-weight: 100;
   font-family: "CocomatUltraLight";
-  letter-spacing: 45px;
+	line-height: 1em;
+  letter-spacing: .3em;
   color: #fff;
-	border-radius: 3px;
-	padding: 40px;
+	padding: 10px 15px 10px 0;
 	text-transform: uppercase;
 	text-align: center;
-	width: 10em;
-	margin: 0;
+	margin: auto;
 	border-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
 }
@@ -1757,11 +1755,9 @@ article.post.post {
     letter-spacing: -1px;
   }
   .page-title h1 {
-    font-size: .6em;
+    font-size: 1em;
     font-weight: 100;
     font-family: "CocomatUltraLight";
-    letter-spacing: 15px;
-		padding: 20px;
     color: #fff;
   }
 
