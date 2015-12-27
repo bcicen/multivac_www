@@ -242,7 +242,7 @@ a {
 a:hover {
   -webkit-transition: color .5s; /* Safari */
   transition: color .5s;
-	color: #853838;
+	color: #B64848;
 }
 
 p, ul, ol, dl {
@@ -1797,6 +1797,11 @@ article.post.post {
     background-color: #f7fafb;
   }
 
+.exlink {
+	font-size: 1em;
+	padding: 10px;
+}
+
   .main-header {
     margin-bottom: 4rem;
     height: 100vh;
@@ -2067,7 +2072,7 @@ article.post.post {
   }
 
   .fa {
-    font-size: .8em;
+    font-size: 1.5em;
   }
 
 }
