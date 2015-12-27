@@ -2,25 +2,25 @@
 
 <header class="main-header">
   <!--
-  <nav class="main-nav overlay clearfix">
+    <nav class="main-nav overlay clearfix">
     <a class="menu-button" href="#"><span class="burger">&#9776;</span></a>
     </nav> -->
-  <div class="vertical">
-    <div class="main-header-content inner">
-      <img class="blog-logo" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Multivac" />
-      <br>
-      <span class="page-title">
-        <h1>{{ .Site.Title }}</h1>
-        <h2 class="page-description">{{ .Site.Params.description }}</h2>
+    <div class="vertical">
+      <div class="main-header-content inner">
+        <img class="blog-logo" src="{{ .Site.BaseURL }}{{.Site.Params.logo}}" alt="Multivac" />
         <br>
-        <br>
-        <!--<a class="title-link" href="#">quickstart</a>
-          <a class="title-link" href="#">docs</a>
-          <a class="title-link" href="#">github</a> -->
-      </span>
+        <span class="page-title">
+          <h1>{{ .Site.Title }}</h1>
+          <h2 class="page-description">{{ .Site.Params.description }}</h2>
+          <br>
+          <br>
+          <!--<a class="title-link" href="#">quickstart</a>
+            <a class="title-link" href="#">docs</a>
+            <a class="title-link" href="#">github</a> -->
+        </span>
+      </div>
     </div>
-  </div>
-  <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
+    <a class="scroll-down icon-arrow-left" href="#content"><span class="hidden">Scroll Down</span></a>
 
 </header>
 
@@ -62,10 +62,10 @@
       <hr>
       <p>Add your existing scripts as Multivac action commands to make Slack a complete DevOps platform; extending functionality with a growing set of features:</p>
       <ul>
-      <li>Output streaming</li>
-      <li>Result summary</li>
-      <li>Command confirmation</li>
-      <li>Access lists for restricting commands to users or groups</li>
+        <li>Output streaming</li>
+        <li>Result summary</li>
+        <li>Command confirmation</li>
+        <li>Access lists for restricting commands to users or groups</li>
       </ul>
     </div>
     <div id="tron2" class="tron">
@@ -74,6 +74,7 @@
       <p>Multivac comes with a full-featured API for futher automation</p>
     </div>
     <div id="tron3" class="tron">
+      <h2>Dashboard Overview</h2>
       <pre><img src="images/webui.png"></img></pre>
       <p>Multivac ships with a built-in WebUI to monitor real-time activity across all channels, review full output logs of previous commands, and manually trigger Multivac actions.</p>
     </div>
@@ -87,12 +88,19 @@
 
 <main id="content2" class="content content-dark" role="main">
 <div class="post-content">
-  <h2 class="wow fadeIn" data-wow-delay=".9s">ChatOps, simplified</h2>
-  <p>
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec a diam lectus. Sed sit amet ipsum mauris. Maecenas congue ligula ac quam viverra nec consectetur ante hendrerit. Donec et mollis dolor. Praesent et diam eget libero egestas mattis sit amet vitae augue. Nam tincidunt congue enim, ut porta lorem lacinia consectetur. Donec ut libero sed arcu vehicula ultricies a non tortor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean ut gravida lorem. Ut turpis felis, pulvinar a semper sed, adipiscing id dolor. Pellentesque auctor nisi id magna consequat sagittis. Curabitur dapibus enim sit amet elit pharetra tincidunt feugiat nisl imperdiet. Ut convallis libero in urna ultrices accumsan. Donec sed odio eros. Donec viverra mi quis quam pulvinar at malesuada arcu rhoncus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. In rutrum accumsan ultricies. Mauris vitae nisi at sem facilisis semper ac in est.
-
-  Vivamus fermentum semper porta. Nunc diam velit, adipiscing ut tristique vitae, sagittis vel odio. Maecenas convallis ullamcorper ultricies. Curabitur ornare, ligula semper consectetur sagittis, nisi diam iaculis velit, id fringilla sem nunc vel mi. Nam dictum, odio nec pretium volutpat, arcu ante placerat erat, non tristique elit urna et turpis. Quisque mi metus, ornare sit amet fermentum et, tincidunt et orci. Fusce eget orci a orci congue vestibulum. Ut dolor diam, elementum et vestibulum eu, porttitor vel elit. Curabitur venenatis pulvinar tellus gravida ornare. Sed et erat faucibus nunc euismod ultricies ut id justo. Nullam cursus suscipit nisi, et ultrices justo sodales nec. Fusce venenatis facilisis lectus ac semper. Aliquam at massa ipsum. Quisque bibendum purus convallis nulla ultrices ultricies. Nullam aliquam, mi eu aliquam tincidunt, purus velit laoreet tortor, viverra pretium nisi quam vitae mi. Fusce vel volutpat elit. Nam sagittis nisi dui.
-  </p>
+  <h2 class="wow fadeIn" data-wow-delay=".9s">Get Started</h2>
+  <a class="exlink wow fadeIn" data-wow-delay=".1s" href="https://github.com/vektorlab/multivac#quickstart">
+    <i class="fa fa-rocket fa-3x wow fadeIn"></i>
+    <br>Quickstart
+  </a>
+  <a class="exlink wow fadeIn" data-wow-delay=".2s" href="http://multivac.vektor.nyc/index.html">
+    <i class="fa fa-book fa-3x wow fadeIn"></i>
+    <br>Documentation
+  </a>
+  <a class="exlink wow fadeIn" data-wow-delay=".3s" href="https://github.com/vektorlab/multivac">
+    <i class="fa fa-github fa-3x wow fadeIn"></i>
+    <br>Github
+  </a>
 </div>
 </main>
 

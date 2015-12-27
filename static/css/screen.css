@@ -240,7 +240,9 @@ a {
 }
 
 a:hover {
-  color: #111;
+  -webkit-transition: color .5s; /* Safari */
+  transition: color .5s;
+	color: #853838;
 }
 
 p, ul, ol, dl {
@@ -772,7 +774,7 @@ on photos which happen to have a light background. */
   box-sizing: border-box;
   display: inline-block;
   height: 38px;
-  padding: 0 15px;
+  padding: 0 20px;
   border: #bfc8cd 1px solid;
   opacity: 1;
   color: #9EABB3;
@@ -887,6 +889,7 @@ body.nav-opened .menu-button .word {
 	text-align: center;
 	width: 10em;
 	margin: 0;
+	border-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -1133,6 +1136,13 @@ with browser width % calculations and rounding */
 
 .feature-light {
   background-color: #53707D;
+}
+
+.exlink {
+	display: inline-block;
+	padding: 40px;
+	color: #fff;
+	font-weight: 200;
 }
 
 #tron-box div {
