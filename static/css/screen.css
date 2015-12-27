@@ -2161,11 +2161,11 @@ canvas {
   position: absolute;
   width: 100%;
   height: 100%;
-  background-color: #06293A;
-  /*background-image: url("../images/screen.jpg");*/
+  background-color: #03131B;
+  background-image: url("../images/bg.jpg");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: 50% 50%;
+  background-position: center bottom;
+	background-size: 50%;
 }
 /* ---- stats.js ---- */
 
