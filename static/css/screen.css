@@ -242,7 +242,7 @@ a {
 a:hover {
   -webkit-transition: color .5s; /* Safari */
   transition: color .5s;
-	color: #B64848;
+  color: #B64848;
 }
 
 p, ul, ol, dl {
@@ -282,7 +282,7 @@ dl dd {
 
 li {
   margin: 0.4em 0;
-	text-align: left;
+  text-align: left;
 }
 
 li li {
@@ -876,18 +876,18 @@ body.nav-opened .menu-button .word {
 }
 
 .page-title h1 {
-	display: inline-block;
+  display: inline-block;
   font-size: 4em;
   font-weight: 100;
   font-family: "CocomatUltraLight";
-	line-height: 1em;
+  line-height: 1em;
   letter-spacing: .3em;
   color: #fff;
-	padding: 10px 15px 10px 0;
-	text-transform: uppercase;
-	text-align: center;
-	margin: auto;
-	border-radius: 10px;
+  padding: 10px 15px 10px 0;
+  text-transform: uppercase;
+  text-align: center;
+  margin: auto;
+  border-radius: 10px;
   background: rgba(0, 0, 0, 0.5);
 }
 
@@ -896,7 +896,7 @@ body.nav-opened .menu-button .word {
   font-weight: 100;
   font-family: "CocomatUltraLight";
   letter-spacing: 1px;
-	text-transform: none;
+  text-transform: none;
   color: #fff;
 }
 
@@ -1125,7 +1125,7 @@ with browser width % calculations and rounding */
 #feature-box a:hover {
   -webkit-transition: background-color .5s; /* Safari */
   transition: background-color .5s;
-	background-color: #853838;
+  background-color: #853838;
 }
 
 .feature-dark {
@@ -1137,10 +1137,10 @@ with browser width % calculations and rounding */
 }
 
 .exlink {
-	display: inline-block;
-	padding: 40px;
-	color: #fff;
-	font-weight: 200;
+  display: inline-block;
+  padding: 40px;
+  color: #fff;
+  font-weight: 200;
 }
 
 #tron-box div {
@@ -1155,16 +1155,16 @@ with browser width % calculations and rounding */
   width: 80%;
   height: 30em;
   margin: 0 auto 5rem auto;
-	padding: 10px;
+  padding: 10px;
   font-size: 1.2em;
 }
 
 .tron pre {
-	max-width: 95%;
+  max-width: 95%;
 }
 
 .tron ul {
-	display: inline-block;
+  display: inline-block;
 }
 
 .tron p {
@@ -1175,16 +1175,16 @@ with browser width % calculations and rounding */
 }
 
 .content-dark {
-	color: #E6E6E6;
-	background-color: #06293A;
+  color: #E6E6E6;
+  background-color: #06293A;
 }
 
 .content-dark h2 {
-	color: #E6E6E6;
+  color: #E6E6E6;
 }
 
 .content-dark p {
-	color: #E6E6E6;
+  color: #E6E6E6;
 }
 
 /*#feature-box h2 {
@@ -1536,7 +1536,7 @@ pagination prev/next links */
   border-top: #EBF2F6 1px solid;
   font-family: "Work Sans", sans-serif;
   font-size: 1rem;
-	margin: 8rem 0 0 0;
+  margin: 8rem 0 0 0;
   line-height: 1.75em;
   color: #BBC7CC;
 }
@@ -1766,14 +1766,14 @@ article.post.post {
     margin-bottom: 5px;
   }
 
-#feature-box a {
-  padding: 5px;
-}
+  #feature-box a {
+    padding: 5px;
+  }
 
   #feature-box p {
-		display:none;
-		font-size: 20px;
-		line-height: .9em;
+    display:none;
+    font-size: 20px;
+    line-height: .9em;
   }
 
   #tron-box > div {
@@ -1783,13 +1783,13 @@ article.post.post {
 
   .tron pre {
     display: block;
-		max-width: 95%;
-		padding: 0px;
+    max-width: 95%;
+    padding: 0px;
   }
 
-	.tron hr {
-		display: none;
-	}
+  .tron hr {
+    display: none;
+  }
 
   .tron p {
     border-radius: 20px;
@@ -1797,10 +1797,10 @@ article.post.post {
     background-color: #f7fafb;
   }
 
-.exlink {
-	font-size: 1em;
-	padding: 10px;
-}
+  .exlink {
+    font-size: 1em;
+    padding: 10px;
+  }
 
   .main-header {
     margin-bottom: 4rem;
@@ -1926,9 +1926,9 @@ article.post.post {
     margin: 1.75em 0;
   }
 
-	ul {
-		list-style-type: square;
-	}
+  ul {
+    list-style-type: square;
+  }
 
   p, ul, ol, dl {
     font-size: 0.7em;
@@ -2164,9 +2164,17 @@ canvas {
   background-color: #03131B;
   background-image: url("../images/bg.jpg");
   background-repeat: no-repeat;
+  /*background-position: -40% bottom;*/
   background-position: center bottom;
-	background-size: 50%;
+  background-size: 50%;
 }
+
+@media only screen and (max-width: 500px) {
+  #particles-js {
+    background-size: 100%;
+  }
+}
+
 /* ---- stats.js ---- */
 
 .count-particles {
