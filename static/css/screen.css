@@ -253,10 +253,6 @@ p, ul, ol, dl {
   text-rendering: geometricPrecision;
 }
 
-ol, ul {
-  padding-left: 3rem;
-}
-
 ol ol, ul ul,
 ul ol, ol ul {
   margin: 0 0 0.4em 0;
@@ -1122,14 +1118,18 @@ with browser width % calculations and rounding */
   color: #E6E6E6;
 }
 
+#feature-box p {
+  margin: 0;
+}
+
 #feature-box a:hover {
-  -webkit-transition: background-color .5s; /* Safari */
-  transition: background-color .5s;
+  -webkit-transition: background-color .2s; /* Safari */
+  transition: background-color .2s;
   background-color: #853838;
 }
 
 .feature-dark {
-  background-color:#06293A;
+  background-color: #06293A;
 }
 
 .feature-light {
@@ -1163,8 +1163,17 @@ with browser width % calculations and rounding */
   max-width: 95%;
 }
 
-.tron ul {
+.tron li {
+  max-width: 80%;
+  margin: auto;
+  margin-top: 10px;
+  line-height: 1em;
   display: inline-block;
+  padding: .4em .5em;
+  color: #E6E6E6;
+  text-align: center;
+  border-radius: 5px;
+  background-color: #53707D;
 }
 
 .tron p {
@@ -1538,11 +1547,11 @@ pagination prev/next links */
   font-size: 1rem;
   margin: 8rem 0 0 0;
   line-height: 1.75em;
-  color: #BBC7CC;
+  color: #06293A;
 }
 
 .site-footer a {
-  color: #BBC7CC;
+  color: #06293A;
   text-decoration: none;
   font-weight: bold;
 }
@@ -1682,10 +1691,6 @@ body:not(.post-template) .post-title {
 
 hr {
   margin: 2.4em 0;
-}
-
-ol, ul {
-  padding-left: 2em;
 }
 
 h1 {
@@ -1930,7 +1935,7 @@ article.post.post {
     list-style-type: square;
   }
 
-  p, ul, ol, dl {
+  p, ul, li, ol, dl {
     font-size: 0.7em;
   }
 

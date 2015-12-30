@@ -1,7 +1,6 @@
 BaseUrl= "http://multivac.chat/"
 LanguageCode= "en-US"
-Title= "multivac"
-paginate = 5
+Title= "Multivac"
 Copyright = "VektorLab - 2015"
 canonifyurls = true
 
@@ -11,7 +10,7 @@ canonifyurls = true
   googleAnalyticsUserID = "UA-71786226-1"
 
 [[menu.main]]
-    name = "about hugo"
+    name = "about"
     pre = "<i class='fa fa-heart'></i>"
     weight = -110
     identifier = "about"
